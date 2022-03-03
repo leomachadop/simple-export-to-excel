@@ -1,0 +1,22 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.6.10'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation("org.jetbrains.kotlinx:kotlinx-cli:0.3.4")
+    implementation("org.apache.poi:poi:5.0.0")
+    implementation('org.apache.poi:poi-ooxml:5.0.0')
+    implementation('commons-lang:commons-lang:2.6')
+}
+
+sourceSets.main {
+    java.srcDirs("src/main/myJava", "src/main/myKotlin")
+}
