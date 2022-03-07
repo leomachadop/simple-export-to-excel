@@ -45,10 +45,10 @@ class Processor(private val context: Context) {
                             }
                             aux.header = header
                         } else {
-                            val linhaSplit = line!!.split(context.separator).toTypedArray()
+                            val lineSplit = line!!.split(context.separator).toTypedArray()
                             val currentRow: Row = sheet.createRow(aux.plus())
-                            for (i in linhaSplit.indices) {
-                                val contentOfLineTrim = linhaSplit[i].trim { it <= ' ' }
+                            for (i in lineSplit.indices) {
+                                val contentOfLineTrim = lineSplit[i].trim { it <= ' ' }
                                 if (NumberUtils.isDigits(contentOfLineTrim)) {
                                     currentRow.createCell(i).setCellValue(contentOfLineTrim.toDouble())
                                 } else if (NumberUtils.isNumber(contentOfLineTrim)) {
